@@ -8,6 +8,7 @@ import {
 } from 'typeorm';
 import { Subscription } from 'src/subscriptions/entities/subscription.entity';
 import { Payment } from 'src/payments/entities/payment.entity';
+import { Profile } from 'src/profiles/entities/profile.entity';
 
 @Entity('users')
 export class User {
@@ -26,13 +27,14 @@ export class User {
   @Column({ default: false })
   declare is_email_verified: boolean;
 
-  // 🧩 Relation: 1 user → ko‘p subscriptions
   @OneToMany(() => Subscription, (sub) => sub.user)
   declare subscriptions: Subscription[];
 
-  // 💳 Relation: 1 user → ko‘p payments
   @OneToMany(() => Payment, (payment) => payment.user)
   declare payments: Payment[];
+
+  @OneToMany(() => Profile, (profile) => profile.user)
+  declare profiles: Profile[];
 
   @CreateDateColumn({ name: 'created_at' })
   declare created_at: Date;
