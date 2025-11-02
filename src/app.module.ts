@@ -10,6 +10,11 @@ import { PaymentsModule } from './payments/payments.module';
 import { ProfilesModule } from './profiles/profiles.module';
 import { DevicesModule } from './devices/devices.module';
 import { ContentsModule } from './contents/contents.module';
+import { TagsModule } from './tag/tag.module';
+import { ContentTagsModule } from './content-tag/content-tag.module';
+import { CategoriesModule } from './category/category.module';
+import { ContentCategoriesModule } from './content-category/content-category.module';
+import { RatingsModule } from './rating/rating.module';
 
 @Module({
   imports: [
@@ -42,6 +47,11 @@ import { ContentsModule } from './contents/contents.module';
     ProfilesModule,
     DevicesModule,
     ContentsModule,
+    TagsModule,
+    ContentTagsModule,
+    CategoriesModule,
+    ContentCategoriesModule,
+    RatingsModule,
   ],
 })
 export class AppModule {}
